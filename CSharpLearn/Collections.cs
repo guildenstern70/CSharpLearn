@@ -23,15 +23,34 @@ public class Collections
 
      public Dictionary<int, string> HashMap()
      {
-         var programs = new Dictionary<int, string>
+         return new Dictionary<int, string>
          {
              { 1, "notepad.exe"},
              { 2, "paint.exe"},
              { 3, "paint.exe"},
              { 4, "wordpad.exe"}
          };
-         return programs;
      }
-     
+
+     public int NavigateList()
+     {
+         var sum = 0;
+         foreach (var fish in this.ListOfStrings())
+         {
+             sum += fish.Length;
+         }
+         return sum;
+     }
+
+     public int NavigateDictionary()
+     {
+         var sum = 0;
+         foreach( KeyValuePair<int, string> kvp in this.HashMap())
+         {
+             sum += kvp.Key;
+             sum += kvp.Value.Length;
+         }
+         return sum;
+     }
      
 }

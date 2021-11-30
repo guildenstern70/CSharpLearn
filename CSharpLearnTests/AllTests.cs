@@ -36,5 +36,25 @@ public class AllTests
         tvColor.IsSmart.Should().BeTrue();
         tvColor.ToString().Should().Be("Television { Inches = 22, IsSmart = True }");
     }
+
+    [Fact]
+    public void ListDictNavigation()
+    {
+        var collections = new Collections();
+        var sum1 = collections.NavigateList();
+        var sum2 = collections.NavigateDictionary();
+
+        sum1.Should().Be(22);
+        sum2.Should().Be(50);
+    }
+
+
+    [Fact]
+    public void InheritanceTest()
+    {
+        var nicePerson = new NicePerson("Alessio", "Saltarin");
+        nicePerson.ToString().Should().Be("Nice Person > Alessio Saltarin");
+    }
     
+
 }
