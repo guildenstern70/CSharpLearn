@@ -5,16 +5,16 @@
  * See LICENSE
  */
 
-
 using FluentAssertions;
 using Xunit;
+using CSharpLearn;
 
 namespace CSharpLearnTests;
 
-public class ClassTest
+public class AllTests
 {
     [Fact]
-    public void CreationTest()
+    public void ClassTest()
     {
         var person = new Person
         {
@@ -24,4 +24,17 @@ public class ClassTest
         person.Name.Should().Be("Alessio");
         person.ToString().Should().Be("Person > Alessio Saltarin");
     }
+
+    [Fact]
+    public void RecordTest()
+    {
+        var tvColor = new Television
+        {
+            Inches = "22",
+            IsSmart = true
+        };
+        tvColor.IsSmart.Should().BeTrue();
+        tvColor.ToString().Should().Be("Television { Inches = 22, IsSmart = True }");
+    }
+    
 }

@@ -5,6 +5,8 @@
  * See LICENSE
  */
 
+namespace CSharpLearn;
+
 ///
 /// Person Class
 /// 

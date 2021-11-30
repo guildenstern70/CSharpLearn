@@ -5,6 +5,17 @@
  * See LICENSE
  */
 
-const string version = "0.0.1";
+namespace CSharpLearn;
 
-Console.WriteLine($"CSharpLearn  {version}", version);
+class CSharpLearn
+{
+     static void Main(string[] args)
+     {
+        const string version = "0.0.1";
+        Console.WriteLine($"CSharpLearn  {version}", version);
+        Console.WriteLine("Run Tests to see action...");
+     }
+}
+
+
+
