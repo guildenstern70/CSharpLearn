@@ -5,6 +5,7 @@
  * See LICENSE
  */
 
+using System.Collections.Generic;
 using FluentAssertions;
 using Xunit;
 using CSharpLearn;
@@ -54,6 +55,28 @@ public class AllTests
     {
         var nicePerson = new NicePerson("Alessio", "Saltarin");
         nicePerson.ToString().Should().Be("Nice Person > Alessio Saltarin");
+    }
+
+    [Fact]
+    public void Loops()
+    {
+        var loops = new Loops();
+
+        loops.NormalFor().Should().Be(3);
+        loops.IterateList().Should().Be(229);
+        loops.While().Should().Be(5);
+        loops.DoWhile().Should().Be(5);
+    }
+
+    [Fact]
+    public void Linq()
+    {
+        var linq = new Linq();
+
+        linq.Map().Should().Be(12);
+        linq.Filter().Should().Be(40);
+        linq.SumAllElements().Should().Be(22);
+        linq.QueryExpressions().Should().Be(270);
     }
     
 
