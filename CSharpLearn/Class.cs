@@ -26,9 +26,14 @@ public class Person
         this.Name = "?";
         this.Surname = "?";
     }
+    
+    ~Person()  // finalizer
+    {
+        // cleanup statements...
+    }
 
     /// <summary>
-    /// Constructor with paramters
+    /// Constructor with parameters
     /// </summary>
     /// <param name="name">Name</param>
     /// <param name="surname">Surname</param>

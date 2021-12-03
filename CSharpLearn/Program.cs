@@ -7,7 +7,7 @@
 
 namespace CSharpLearn;
 
-class CSharpLearn
+internal static class CSharpLearn
 {
      static void Main(string[] args)
      {

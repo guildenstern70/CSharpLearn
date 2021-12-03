@@ -5,10 +5,12 @@
  * See LICENSE
  */
 
+using System;
 using System.Collections.Generic;
 using FluentAssertions;
 using Xunit;
 using CSharpLearn;
+using Nullable = CSharpLearn.Nullable;
 
 namespace CSharpLearnTests;
 
@@ -39,7 +41,7 @@ public class AllTests
     }
 
     [Fact]
-    public void ListDictNavigation()
+    public void ListDictNavigationTest()
     {
         var collections = new Collections();
         var sum1 = collections.NavigateList();
@@ -58,7 +60,7 @@ public class AllTests
     }
 
     [Fact]
-    public void Loops()
+    public void LoopsTest()
     {
         var loops = new Loops();
 
@@ -69,7 +71,7 @@ public class AllTests
     }
 
     [Fact]
-    public void Linq()
+    public void LinqTest()
     {
         var linq = new Linq();
 
@@ -78,6 +80,32 @@ public class AllTests
         linq.SumAllElements().Should().Be(22);
         linq.QueryExpressions().Should().Be(270);
     }
-    
+
+    [Fact]
+    public void NullableTest()
+    {
+        var nullable = new Nullable();
+
+        nullable.NullString().Should().BeNegative();
+        nullable.IfIsNull().Should().Be("NeedToCheckforNull");
+    }
+
+    [Fact]
+    public void IndexerTest()
+    {
+        var index = new Indexer();
+        index[1].Should().Be("blue");
+        index[2] = "green";
+        index[2].Should().Be("green");
+    }
+
+    [Fact]
+    public void PolymorphismTest()
+    {
+        var polymorph = new Polymorphism();
+        var result = Math.Ceiling(polymorph.PolymorphicTest());
+        result.Should().Be(379);
+    }
+
 
 }
