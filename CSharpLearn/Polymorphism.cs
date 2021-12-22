@@ -13,11 +13,6 @@ internal abstract class Shape
     {
         return 0.0; 
     }
-
-    public virtual double Perimeter()
-    {
-        return 0.0;
-    }
 }
 
 internal class Square : Shape

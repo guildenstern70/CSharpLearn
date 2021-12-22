@@ -107,5 +107,13 @@ public class AllTests
         result.Should().Be(379);
     }
 
+    [Fact]
+    public void ObjectInitializer()
+    {
+        var initializer = new ObjectInitializer();
+        var createdPerson = initializer.CreateObject();
+        createdPerson.Should().Be("Person > Elena Zambrelli");
+    }
+
 
 }
