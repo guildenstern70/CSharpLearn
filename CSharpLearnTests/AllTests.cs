@@ -103,17 +103,33 @@ public class AllTests
     public void PolymorphismTest()
     {
         var polymorph = new Polymorphism();
-        var result = Math.Ceiling(polymorph.PolymorphicTest());
+        double result = Math.Ceiling(polymorph.PolymorphicTest());
         result.Should().Be(379);
     }
 
     [Fact]
-    public void ObjectInitializer()
+    public void ObjectInitializerTest()
     {
         var initializer = new ObjectInitializer();
-        var createdPerson = initializer.CreateObject();
+        string createdPerson = initializer.CreateObject();
         createdPerson.Should().Be("Person > Elena Zambrelli");
     }
 
+    [Fact]
+    public void RecordStructTest()
+    {
+        var recording = new Recording() {Artist = "Beatles", Title = "She Loves You"};
+        recording.Artist.Should().Be("Beatles");
+        recording.Id.ToString().Length.Should().BePositive();
+    }
 
+    [Fact]
+    public void ExpressionBodyTest()
+    {
+        var multiplier = new Multiplier(6, 7);
+        multiplier.A.Should().Be(6);
+        multiplier.B.Should().Be(7);
+        multiplier.Result.Should().Be(42);
+        multiplier.ToString().Should().Be("6 * 7 = 42");
+    }
 }
